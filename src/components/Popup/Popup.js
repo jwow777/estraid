@@ -1,13 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import { Avatar, Button, Checkbox, Dialog, FormControl, FormControlLabel, Grid, IconButton, makeStyles, MenuItem, Select, TextField, Typography } from '@material-ui/core';
-import { Clear, LocalPhoneRounded, MailOutlineRounded, Telegram, WhatsApp } from '@material-ui/icons';
+import {
+  Avatar,
+  Button,
+  Checkbox,
+  Dialog,
+  FormControl,
+  FormControlLabel,
+  Grid,
+  IconButton,
+  makeStyles,
+  MenuItem,
+  Select,
+  TextField,
+  Typography,
+} from '@material-ui/core';
+import {
+  Clear,
+  LocalPhoneRounded,
+  MailOutlineRounded,
+  Telegram,
+  WhatsApp,
+} from '@material-ui/icons';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/plain.css';
 import clsx from 'clsx';
-import avatar from "../../images/popup/avatar.jpg"
-import checked from "../../images/popup/checked.svg";
-import ring from "../../images/popup/ring.svg";
-import checkedRing from "../../images/popup/checked-ring.svg";
+import avatar from '../../images/popup/avatar.jpg';
+import checked from '../../images/popup/checked.svg';
+import ring from '../../images/popup/ring.svg';
+import checkedRing from '../../images/popup/checked-ring.svg';
 import './Popup.css';
 
 const useStyles = makeStyles(() => ({
@@ -87,7 +107,7 @@ const useStyles = makeStyles(() => ({
     lineHeight: 24,
     borderRadius: 5,
     backgroundColor: '#03CDBE',
-    fontFamily: "'Inter', sans-serif",
+    fontFamily: '"Inter", sans-serif',
     fontStyle: 'normal',
     letterSpacing: '-0.035em',
     color: '#fff',
@@ -101,7 +121,7 @@ const useStyles = makeStyles(() => ({
     },
     '& .MuiButton-label': {
       height: '100%',
-    }
+    },
   },
   checkbox: {
     '&.MuiCheckbox-colorSecondary.Mui-checked': {
@@ -179,17 +199,19 @@ function Popup({ open, close, openPolicy }) {
       <IconButton onClick={close} className={classes.close}>
         <Clear />
       </IconButton>
-      <h2 className="popup__title">Заявка на пробный период</h2>
+      <h2 className='popup__title'>Заявка на пробный период</h2>
       <p className='popup__text popup__text_margin'>
         Привет! У нас готова beta-версия, доступы мы пока даем только по заявкам.
       </p>
       <p className='popup__text popup__text_margin'>
-        Если вы хотите только готовую версию - все равно оставляйте заявку, мы оповестим, как только она выйдет. Мы рады, что вы заинтересовались нашим продуктом! :)
+        Если вы хотите только готовую версию - все равно оставляйте заявку,&nbsp;
+        мы оповестим, как только она выйдет. Мы рады, что вы заинтересовались&nbsp;
+        нашим продуктом! :)
       </p>
       <Grid
         container
       >
-        <Avatar alt="Алексей" src={avatar} className="popup__avatar" />
+        <Avatar alt='Алексей' src={avatar} className='popup__avatar' />
         <p className='popup__text popup__text_last'>
           Алексей, Основатель&nbsp;
           <span className='popup__text popup__text_turquoise'>
@@ -278,7 +300,7 @@ function Popup({ open, close, openPolicy }) {
                 className={classes.checkbox}
               />
             }
-            label="Я согласен с&nbsp;"
+            label='Я согласен с&nbsp;'
           />
           <Typography
             className='popup__label-politics'
@@ -298,8 +320,8 @@ function Popup({ open, close, openPolicy }) {
               className={classes.checkbox}
             />
           }
-          label="Оповестить, когда выйдет паблик-версия"
-          className="popup__label-ring"
+          label='Оповестить, когда выйдет паблик-версия'
+          className='popup__label-ring'
         />
         <Button
           type='submit'

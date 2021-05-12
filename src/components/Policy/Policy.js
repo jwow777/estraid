@@ -32,7 +32,6 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-
 function Policy({ open, close }) {
   const classes = useStyles();
   return (

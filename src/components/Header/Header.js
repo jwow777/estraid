@@ -1,9 +1,16 @@
-import React, { useState } from "react";
-import { Button, Grid, makeStyles, MenuItem, MenuList, Popover } from "@material-ui/core";
-import logo from "../../images/header/logo.svg";
+import React, { useState } from 'react';
+import {
+  Button,
+  Grid,
+  makeStyles,
+  MenuItem,
+  MenuList,
+  Popover,
+} from '@material-ui/core';
+import logo from '../../images/header/logo.svg';
 import ru from '../../images/flags/ru.png';
 import us from '../../images/flags/us.png';
-import "./Header.css";
+import './Header.css';
 
 const useStyles = makeStyles(() => ({
   button: {
@@ -14,7 +21,7 @@ const useStyles = makeStyles(() => ({
     lineHeight: 22,
     borderRadius: 2,
     backgroundColor: '#03CDBE',
-    fontFamily: "'Inter', sans-serif",
+    fontFamily: '"Inter", sans-serif',
     fontStyle: 'normal',
     letterSpacing: '-0.035em',
     color: '#fff',
@@ -22,7 +29,7 @@ const useStyles = makeStyles(() => ({
     overflow: 'hidden',
     '&:hover': {
       backgroundColor: '#00E8D6',
-    }
+    },
   },
 }));
 
@@ -40,24 +47,24 @@ function Header() {
   return (
     <Grid
       container
-      component="header"
-      justify="space-between"
-      alignItems="center"
-      className="header"
+      component='header'
+      justify='space-between'
+      alignItems='center'
+      className='header'
     >
-      <div className="header__logo-box">
-        <img src={logo} alt='Estraid Broker' className="header__logo"/>
-        <p className="header__title">Estraid Broker</p>
+      <div className='header__logo-box'>
+        <img src={logo} alt='Estraid Broker' className='header__logo'/>
+        <p className='header__title'>Estraid Broker</p>
       </div>
       <nav>
-        <ul className="menu">
-          <li className="menu__item">Продукт</li>
-          <li className="menu__item">Цены</li>
-          <li className="menu__item">Кейсы</li>
-          <li className="menu__item">Контакты</li>
+        <ul className='menu'>
+          <li className='menu__item'>Продукт</li>
+          <li className='menu__item'>Цены</li>
+          <li className='menu__item'>Кейсы</li>
+          <li className='menu__item'>Контакты</li>
         </ul>
       </nav>
-      <div className="header__button-box">
+      <div className='header__button-box'>
         <img src={language} alt='language' className='header__lang-current' onClick={handleMenuLang}/>
         <Popover
           anchorEl={anchorElLang}
@@ -71,7 +78,7 @@ function Header() {
           }}
           open={openLang}
           onClose={handleCloseLang}
-          className="header__lang-box"
+          className='header__lang-box'
         >
           <MenuList>
             <MenuItem onClick={handleCloseLang} lang={ru}>
@@ -85,8 +92,8 @@ function Header() {
           </MenuList>
         </Popover>
         <Button
-          variant="contained"
-          color="primary"
+          variant='contained'
+          color='primary'
           className={classes.button}
         >
           Вход
