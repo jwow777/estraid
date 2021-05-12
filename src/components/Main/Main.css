@@ -1,0 +1,33 @@
+.content {
+  padding: 40px 90px;
+  background-repeat: no-repeat;
+}
+
+.title {
+  max-width: 720px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 75px;
+  line-height: 101.1%;
+  letter-spacing: -0.035em;
+  color: #212121;
+  margin: 0;
+}
+
+.text_turquoise {
+  color: #03CDBE;
+}
+
+.lists {
+  max-width: 690px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 31px;
+  letter-spacing: 0.005em;
+  color: #212121;
+  margin: 40px 0 30px;
+  padding-left: 25px;
+}
