@@ -34,7 +34,7 @@ function Main({ openPopup }) {
       justify='space-between'
       alignItems='center'
       className='content'
-      style={{ background: `url(${phone}) 1135px 230px no-repeat, url(${computer}) 870px 50px no-repeat` }}
+      style={{ background: `url(${phone}) 1135px 250px no-repeat, url(${computer}) 870px 90px no-repeat` }}
     >
       <div>
         <h1 className='title'>

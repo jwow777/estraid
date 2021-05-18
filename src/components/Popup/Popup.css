@@ -39,6 +39,7 @@
 }
 
 .popup__text_turquoise {
+  font-weight: 400;
   color: #03CDBE; 
 }
 
@@ -98,6 +99,11 @@
   height: 38px;
   background: #fff;
   border: none !important;
+}
+
+.popup__button-phone .country-list {
+  height: 150px;
+  width: 899px;
 }
 
 .popup__input-email {
@@ -174,4 +180,10 @@
   font-size: 15px;
   line-height: 13px;
   color: #00A095;
+}
+
+@media screen and (max-width: 1125px) {
+  .popup__button-phone .country-list {
+    width: calc(100vw - 225px);
+  }
 }

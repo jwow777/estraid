@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Button,
   Grid,
-  makeStyles,
   MenuItem,
   MenuList,
   Popover,
@@ -12,30 +10,7 @@ import ru from '../../images/flags/ru.png';
 import us from '../../images/flags/us.png';
 import './Header.css';
 
-const useStyles = makeStyles(() => ({
-  button: {
-    width: 90,
-    height: 40,
-    fontWeight: 'normal',
-    fontSize: 18,
-    lineHeight: 22,
-    borderRadius: 2,
-    backgroundColor: '#03CDBE',
-    fontFamily: '"Inter", sans-serif',
-    fontStyle: 'normal',
-    letterSpacing: '-0.035em',
-    color: '#fff',
-    textTransform: 'none',
-    overflow: 'hidden',
-    '&:hover': {
-      backgroundColor: '#00E8D6',
-    },
-  },
-}));
-
 function Header() {
-  const classes = useStyles();
-
   const [language, setLanguage] = useState(ru);
   const [anchorElLang, setAnchorElLang] = useState(null);
   const openLang = Boolean(anchorElLang);
@@ -56,15 +31,10 @@ function Header() {
         <img src={logo} alt='Estraid Broker' className='header__logo'/>
         <p className='header__title'>Estraid Broker</p>
       </div>
-      <nav>
-        <ul className='menu'>
-          <li className='menu__item'>Продукт</li>
-          <li className='menu__item'>Цены</li>
-          <li className='menu__item'>Кейсы</li>
-          <li className='menu__item'>Контакты</li>
-        </ul>
-      </nav>
       <div className='header__button-box'>
+        <a href='tel:+74954899696' className='link header__phone'>
+          +7 (495) 489-96-96
+        </a>
         <img src={language} alt='language' className='header__lang-current' onClick={handleMenuLang}/>
         <Popover
           anchorEl={anchorElLang}
@@ -91,13 +61,6 @@ function Header() {
             </MenuItem>
           </MenuList>
         </Popover>
-        <Button
-          variant='contained'
-          color='primary'
-          className={classes.button}
-        >
-          Вход
-        </Button>
       </div>
     </Grid>
   );

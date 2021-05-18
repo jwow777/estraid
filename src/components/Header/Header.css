@@ -35,32 +35,21 @@
   color: #03CDBE;
 }
 
-.menu {
-  display: grid;
-  grid-template-columns: repeat(4, max-content);
-  grid-column-gap: 50px;
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 19px;
-  line-height: 23px;
-  letter-spacing: -0.035em;
-  color: #000;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu__item {
-  cursor: pointer;
-}
-
 .header__button-box {
   display: grid;
   grid-template-columns: repeat(2, max-content);
-  grid-column-gap: 25px;
   align-items: center;
   justify-content: space-between;
+  grid-column-gap: 20px;
+}
+
+.header__phone {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 23px;
+  color: #000;
+  text-decoration: none;
 }
 
 .header__lang-current {

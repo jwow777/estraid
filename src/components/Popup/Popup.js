@@ -173,7 +173,9 @@ function Popup({ open, close, openPolicy }) {
   const [state, setState] = useState({
     communication: 'call',
     phone: '',
+    country: '',
     email: '',
+    date: new Date(),
     policy: true,
     ring: true,
   });
@@ -185,7 +187,26 @@ function Popup({ open, close, openPolicy }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    close();
+    return fetch('https://estraid.qexsystems.ru/connector.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        action: 'app_form',
+        body: {
+          communication: state.communication,
+          phone: state.phone,
+          email: state.email,
+        },
+      }),
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      // eslint-disable-next-line prefer-promise-reject-errors
+      return Promise.reject(`Что-то пошло не так: ${res.status}`);
+    }).catch((err) => console.log(err));
   };
 
   const classes = useStyles();
