@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Grid,
   MenuItem,
@@ -28,7 +29,9 @@ function Header() {
       className='header'
     >
       <div className='header__logo-box'>
-        <img src={logo} alt='Estraid Broker' className='header__logo'/>
+        <Link to='/'>
+          <img src={logo} alt='Estraid' className='header__logo'/>
+        </Link>
         <p className='header__title'>Estraid Broker</p>
       </div>
       <div className='header__button-box'>

@@ -8,6 +8,11 @@
   grid-column-gap: 10px;
 }
 
+.header__logo {
+  width: 40px;
+  height: 43px;
+}
+
 .header__title {
   grid-column: 2;
   grid-row: 1;
@@ -68,4 +73,42 @@
 
 .header__lang-box .MuiPopover-paper {
   margin-top: 15px;
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    padding: 20px;
+  }
+
+  .header__logo-box {
+    grid-column-gap: 5px;
+  }
+
+  .header__logo {
+    height: 30px;
+  }
+
+  .header__lang-current {
+    width: 40px;
+    height: 25px;
+  }
+
+  .header__title {
+    height: auto;
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .header__title::after {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .header__button-box {
+    grid-template-columns: 1fr;
+  }
+
+  .header__phone {
+    display: none;
+  }
 }

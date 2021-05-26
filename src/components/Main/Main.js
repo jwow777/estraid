@@ -4,12 +4,21 @@ import computer from '../../images/main/computer.png';
 import phone from '../../images/main/phone.png';
 import './Main.css';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
+  container: {
+    background: `url(${phone}) 1135px 250px no-repeat, url(${computer}) 870px 90px no-repeat`,
+    minHeight: 'calc(100vh - 195px)',
+    padding: '80px 90px',
+    [theme.breakpoints.down('xs')]: {
+      background: `url(${phone}) 120% 60px / 50% no-repeat, url(${computer}) 20px 50px / 65% no-repeat`,
+      padding: '75% 20px 50px',
+    },
+  },
   button: {
-    height: 50,
+    minHeight: 50,
     fontWeight: 500,
     fontSize: 20,
-    lineHeight: 24,
+    lineHeight: '24px',
     borderRadius: 5,
     backgroundColor: '#03CDBE',
     fontFamily: '"Inter", sans-serif',
@@ -20,6 +29,14 @@ const useStyles = makeStyles(() => ({
     overflow: 'hidden',
     '&:hover': {
       backgroundColor: '#00E8D6',
+    },
+    [theme.breakpoints.down('xs')]: {
+      minHeight: 45,
+      maxWidth: 300,
+      width: '100%',
+      fontWeight: 400,
+      fontSize: 16,
+      lineHeight: '20px',
     },
   },
 }));
@@ -32,9 +49,7 @@ function Main({ openPopup }) {
       container
       component='main'
       justify='space-between'
-      alignItems='center'
-      className='content'
-      style={{ background: `url(${phone}) 1135px 250px no-repeat, url(${computer}) 870px 90px no-repeat` }}
+      className={classes.container}
     >
       <div>
         <h1 className='title'>
