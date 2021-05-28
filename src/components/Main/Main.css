@@ -1,6 +1,8 @@
-.content {
-  padding: 80px 90px;
-  background-repeat: no-repeat;
+.main__container {
+  max-width: 1440px;
+  margin: auto;
+  box-sizing: border-box;
+  padding: 80px 100px;
 }
 
 .title {
@@ -33,6 +35,10 @@
 }
 
 @media screen and (max-width: 600px) {
+  .main__container {
+    padding: 0;
+  }
+  
   .title {
     font-size: 40px;
     line-height: 40px;
