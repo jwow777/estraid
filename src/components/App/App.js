@@ -22,7 +22,7 @@ function App() {
     <>
       <Switch>
         <Route exact path='/'>
-          <Header />
+          <Header openPopup={handleClickOpenPopup} />
           <Main openPopup={handleClickOpenPopup} />
           <Footer />
           <Popup open={openPopup} close={handleClosePopup} openPolicy={handleClickOpenPolicy} />
@@ -33,6 +33,7 @@ function App() {
           <PolicyPage />
           <Footer />
         </Route>
+        <Route path='/login'/>
         <Route path='*'>
           <NotFound />
         </Route>

@@ -5,13 +5,14 @@ import phone from '../../images/main/phone.png';
 import './Main.css';
 
 const useStyles = makeStyles((theme) => ({
-  main: {
-    background: `url(${phone}) 1350px 250px no-repeat, url(${computer}) 1075px 90px no-repeat`,
-    minHeight: 'calc(100vh - 97px)',
+  container: {
+    background: `url(${phone}) 1135px 250px no-repeat, url(${computer}) 870px 90px no-repeat`,
+    maxWidth: 1440,
+    margin: 'auto',
     boxSizing: 'border-box',
+    padding: '80px 100px',
     [theme.breakpoints.down('xs')]: {
       background: `url(${phone}) 120% 60px / 50% no-repeat, url(${computer}) 20px 50px / 65% no-repeat`,
-      minHeight: 'calc(100vh - 74px)',
       padding: '75% 20px 50px',
     },
   },
@@ -46,8 +47,8 @@ function Main({ openPopup }) {
   const classes = useStyles();
 
   return (
-    <main className={classes.main}>
-      <div className='main__container'>
+    <main className='main'>
+      <div className={classes.container}>
         <div>
           <h1 className='title'>
             Управление&nbsp;
@@ -56,7 +57,7 @@ function Main({ openPopup }) {
           </h1>
           <ul className='lists'>
             <li className='lists__item'>Управляйте одним из главных активов компании</li>
-            <li className='lists__item'>Добавляйте проекты, объекты, застройщиков, созадвайте подборки для клиентов</li>
+            <li className='lists__item'>Добавляйте проекты, объекты, застройщиков, создавайте подборки для клиентов</li>
             <li className='lists__item'>Удобная интеграция с CRM</li>
           </ul>
           <Button

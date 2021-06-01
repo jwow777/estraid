@@ -48,7 +48,7 @@
 
 .header__button-box {
   display: grid;
-  grid-template-columns: repeat(2, max-content);
+  grid-template-columns: repeat(3, max-content);
   align-items: center;
   justify-content: space-between;
   grid-column-gap: 20px;
@@ -81,6 +81,10 @@
   margin-top: 15px;
 }
 
+.header__menu-button-mobile.MuiIconButton-root {
+  display: none;
+}
+
 @media screen and (max-width: 600px) {
   .header__container {
     padding: 20px;
@@ -91,31 +95,67 @@
   }
 
   .header__logo {
-    height: 30px;
+    height: 37px;
   }
 
   .header__lang-current {
-    width: 40px;
-    height: 25px;
+    width: 50px;
+    height: 32px;
+  }
+
+  .header__lang-current-swipe-box {
+    width: 37px;
+    height: 23px;
+  }
+
+  .header__lang-swipe-box {
+    display: grid;
+    grid-template-columns: repeat(2,max-content);
+    align-items: center;
+    grid-gap: 5px;
+  }
+
+  .header__lang-text {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #1C1C1C;
+    margin: 0;
   }
 
   .header__title {
+    width: min-content;
     height: auto;
-    font-size: 30px;
-    line-height: 30px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 19px;
   }
 
   .header__title::after {
     bottom: -13px;
-    font-size: 16px;
-    line-height: 24px;
+    left: -42px;
+    width: max-content;
+    font-size: 13px;
+    line-height: 0.8;
   }
 
   .header__button-box {
-    grid-template-columns: 1fr;
+    grid-column-gap: 12px;
   }
 
   .header__phone {
     display: none;
+  }
+
+  .header__menu-button-mobile.MuiIconButton-root {
+    display: block;
+    margin: -12px;
+  }
+
+  .header__menu-button-mobile.MuiIconButton-root .MuiSvgIcon-root {
+    width: 40px;
+    height: 40px;
   }
 }
