@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Avatar,
@@ -55,9 +55,17 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
   },
   drawerHeader: {
-    height: 48,
+    height: 82,
     display: 'flex',
-    padding: '6px 4px',
+    alignItems: 'center',
+    padding: '0 4px',
+    '& .MuiIconButton-root': {
+      height: 46,
+      padding: 0,
+    },
+  },
+  swipeArrow: {
+    fontSize: 46,
   },
   listItem: {
     marginTop: 9,
@@ -139,7 +147,7 @@ function Header({ openPopup }) {
     >
       <div className={classes.drawerHeader}>
         <IconButton onClick={toggleDrawer(false)}>
-          <ChevronRight fontSize="large"/>
+          <ChevronRight className={classes.swipeArrow}/>
         </IconButton>
       </div>
       <Divider />
@@ -168,7 +176,26 @@ function Header({ openPopup }) {
       </div>
     </div>
   );
-  const [isAuth, setIsAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState(
+    {
+      is_auth: 0,
+      auth_link: null,
+      user_img: null,
+    }
+  );
+
+  useEffect(() => {
+    return fetch(`https://estraid.com/check-user-land`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    })
+    .then(res => res.json())
+    .then(res => setIsAuth(res))
+    .catch(err => console.log(err));
+  }, []);
+
   return (
     <header>
       <div className='header__container'>
@@ -208,9 +235,9 @@ function Header({ openPopup }) {
               </MenuItem>
             </MenuList>
           </Popover>
-          { isAuth 
-            ? (<a href='/login'>
-                <Avatar src='https://get.wallhere.com/photo/1600x1200-px-action-adventure-alien-aliens-Avatar-fantasy-fi-fighting-futuristic-sci-warrior-1635355.jpg' />
+          { isAuth.is_auth
+            ? (<a href={isAuth.auth_link}>
+                <Avatar src={isAuth.user_img} />
               </a>)
             : <Button className={classes.button} href='/login'>Вход</Button>
           }

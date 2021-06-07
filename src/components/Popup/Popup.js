@@ -217,7 +217,7 @@ function Popup({ open, close, openPolicy }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    return fetch(`${window.location.href}connector.php`, {
+    return fetch(`https://estraid.com/send-land-info`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -378,7 +378,7 @@ function Popup({ open, close, openPolicy }) {
           type='submit'
           variant='contained'
           className={classes.button}
-          disabled={!(state.email || state.phone) || !(state.policy && state.ring)}
+          disabled={!(state.email || state.phone) || !state.policy}
         >
           Получить доступ к закрытой beta-версии
         </Button>
